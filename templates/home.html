@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block logo %}
+     <div id="logo"><img src="https://i.pinimg.com/originals/27/e9/6d/27e96d0e66c3b6d04f76c41f1b7c8a16.jpg"></div>
+<style>
+   #logo{
+   height:200px;
+   width: 500px;
+   }
+</style>
+
+{% endblock %}
+
+{% block banner %}
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+.mySlides{
+display: block;
+margin-left: auto;
+margin-right: auto;
+border: 7px solid #e1d9c7;
+}
+</style>
+<body>
+
+
+
+<div class="w3-content w3-display-container" style="max-width:1000px">
+<img class="mySlides" src="https://www.bhemmings.com/pub/media/catalog/category/briefcases-laptop-bags-banner-1290x430.jpg" style="width:100%">
+<img class="mySlides" src="https://www.bhemmings.com/pub/media/catalog/category/briefcases-flap-briefcases-banner-1290x430.jpg" style="width:100%" >
+<img class="mySlides" src="https://www.bhemmings.com/pub/media/catalog/category/briefcases-troubadour-FW2019-banner-1290x430.jpg" style="width:100%" >
+<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+  <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+  <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+</div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+var i;
+var x = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("demo");
+if (n > x.length) {slideIndex = 1}
+if (n < 1) {slideIndex = x.length}
+for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+  dots[i].className = dots[i].className.replace(" w3-white", "");
+}
+x[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+</body>
+{% endblock %}
+
+{% block content %}
+<head>
+<style>
+.mouse{
+border-radius: 50%;
+border: 3px solid #e1d9c7;
+vertical-align: middle;
+width: 200px;
+height: 200px;
+margin-left: 150px;
+margin-top:40px;
+}
+.product{
+border-radius: 50%;
+border: 3px solid #e1d9c7;
+vertical-align: middle;
+width: 200px;
+height: 200px;
+margin-left: 51px;
+margin-top:40px;
+}
+</style>
+</head>
+<body>
+<a href = "/products">
+<img class="mouse" src="https://www.amphasisdesign.com/image/cache/catalog/corporategifts/Electronics/nulaxy-wireless-mouse-500x500.jpg" alt="Avatar" style="">
+</a>
+<img class="product" src="https://c8b9c7i4.stackpathcdn.com/wp-content/uploads/2017/06/leopard-sleeve4-wouf.jpg" alt="Avatar" style="">
+<img class="product" src="http://www.gadgets4geeks.com.au/WebRoot/Store/Shops/gadgets4geeks/Products/IP8P6042/front-camera-cover-privacy-shutter-slider-for-iphone-ipad-macbook-laptop.jpg" alt="Avatar" style="">
+<img class="product" src="https://cdn.shopify.com/s/files/1/0209/1522/products/f1086573deca9c8125813fbca4edac54_1024x1024.jpg?v=1537155155" alt="Avatar" style="">
+</body>
+
+{% endblock %}
+
+
+{% block topRight %}
+     <button onclick="window.location.href = '/login';">Login</button>
+
+{% endblock %}
+
+
+{% block searchBar %}
+     <input type="text" placeholder="Search for items...">
+     <button type="submit"><i class="fa fa-search"></i></button>
+{% endblock %}
